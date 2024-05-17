@@ -24,12 +24,12 @@ class N_puzzle:
             
             if 0 <= new_row < board_size and 0 <= new_col < board_size:
                 new_zero_index = new_row * board_size + new_col
+
                 new_board = self.board[:]
+
                 aux_zero_index = new_board[zero_index]
                 new_board[zero_index] = new_board[new_zero_index]
                 new_board[new_zero_index] = aux_zero_index
+                
                 neighbors.append(N_puzzle(new_board, self.goal, self.g + 1, self))
         return neighbors
-
-    def __lt__(self, other):
-        return self.f < other.f
