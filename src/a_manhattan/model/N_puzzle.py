@@ -3,13 +3,21 @@ class N_puzzle:
         self.board = board
         self.goal = goal
         self.g = g
+        self.parent = parent
         self.h = self.heuristic()
         self.f = self.g + self.h
-        self.parent = parent  
 
     def heuristic(self):
-        return sum(1 for i in range(len(self.board)) if self.board[i] != self.goal[i] and self.board[i] != 0)
-    
+        n = int(len(self.board) ** 0.5)
+        distance = 0
+        for index, value in enumerate(self.board):
+            if value != 0:
+                target_index = self.goal.index(value)
+                current_x, current_y = divmod(index, n)
+                target_x, target_y = divmod(target_index, n)
+                distance += abs(current_x - target_x) + abs(current_y - target_y)
+        return distance
+
     def estados_sucessores(self):
         lista_estados_sucessores = []
         posicao_zero = self.board.index(0)
