@@ -1,9 +1,11 @@
-from service.bfs import bfs  # Importa o algoritmo BFS
+from service.ids import ids 
+from service.ids import ids, N_puzzle
 
 def main():
-    initial = [7, 2, 4, 5, 0, 6, 8, 3, 1]
     goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
-    path = bfs(initial, goal)  # Use o algoritmo BFS
+    initial = N_puzzle.generate_initial_state(goal)
+    max_depth = 50
+    path = ids(initial, goal, max_depth)  
 
     if path:
         for step in path:
