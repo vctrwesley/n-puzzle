@@ -26,7 +26,7 @@ class N_puzzle:
         return neighbors
 
     @staticmethod
-    def generate_initial_state(goal, moves=100):
+    def generate_initial_state(goal, moves=50):
         state = goal[:]
         for _ in range(moves):
             zero_index = state.index(0)

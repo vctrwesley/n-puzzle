@@ -10,7 +10,7 @@ def reconstruct_path(state):
 
 def dls(state, goal, depth):
     print(f"Current state: {state.board}, Current depth: {depth}")
-    if depth == 0 and state.board == goal:
+    if state.board == goal:
         return state
     elif depth > 0:
         for neighbor in state.get_neighbors():

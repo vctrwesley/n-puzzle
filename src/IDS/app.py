@@ -3,8 +3,8 @@ from service.ids import ids, N_puzzle
 
 def main():
     goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
-    initial = N_puzzle.generate_initial_state(goal)
-    max_depth = 50
+    initial = [1, 2, 3, 4, 5, 0, 6, 7, 8]
+    max_depth = 30
     path = ids(initial, goal, max_depth)  
 
     if path:
