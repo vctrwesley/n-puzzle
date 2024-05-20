@@ -8,21 +8,24 @@ def reconstruct_path(state):
         state = state.parent
     return path[::-1]
 
-def dls(state, goal, depth):
-    print(f"Current state: {state.board}, Current depth: {depth}")
+def dfs(state, goal, max_depth):
     if state.board == goal:
         return state
-    elif depth > 0:
+    elif max_depth > 0:
         for neighbor in state.get_neighbors():
-            found = dls(neighbor, goal, depth - 1)
-            if found:
-                return found
+            if tuple(neighbor.board) not in explored:
+                explored.add(tuple(neighbor.board))
+                found = dfs(neighbor, goal, max_depth - 1)
+                if found:
+                    return found
     return None
 
 def ids(initial, goal, max_depth):
     initial_state = N_puzzle(initial)
+    global explored
     for depth in range(max_depth):
-        found = dls(initial_state, goal, depth)
+        explored = set()
+        found = dfs(initial_state, goal, depth)
         if found:
             return reconstruct_path(found)
     return None

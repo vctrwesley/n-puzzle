@@ -1,5 +1,4 @@
 from service.ids import ids 
-from service.ids import ids, N_puzzle
 
 def main():
     goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
@@ -11,7 +10,7 @@ def main():
         for step in path:
             print(step)
     else:
-        print("Sem resolução!")
+        print("sem resolução!")
 
 if __name__ == "__main__":
     main()
