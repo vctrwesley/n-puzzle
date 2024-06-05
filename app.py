@@ -6,5 +6,6 @@ def main():
     print("initList: ", initList)
     print("objetiveList: ", objetiveList)
 
+
 if __name__ == '__main__':
     main()

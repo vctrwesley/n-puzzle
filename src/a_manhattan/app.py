@@ -1,10 +1,17 @@
-from service.a_star import a_star
+from service.a_star import relatorio
 
 def main():
     #initial = [1, 2, 3, 4, 0, 5, 6, 7, 8]
     initial = [7, 0, 6, 1, 5, 2, 3, 4, 8]
     goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
-    path = a_star(initial, goal)
+    path, max_memoria_usada, timeFinal, nos_expandidos, fator_ramificacao = relatorio(initial, goal)
+
+    print("--------------------------------------\n")
+    print("Uso maximo de memoria: ", max_memoria_usada, "MB")
+    print("Quantidade de nos expandidos: ", nos_expandidos)
+    print("Fator de ramificacao media: ", fator_ramificacao)
+    print("Tempo de execucao: ", timeFinal)
+    print("\n--------------------------------------\n")
 
     if path:
         for aux, step in enumerate(path):
