@@ -22,7 +22,7 @@ A Busca A* utiliza uma heurística para priorizar a expansão de nós, neste cas
 4. Busca A* com Heurística de Distância de Manhattan
 A heurística de distância de Manhattan leva em consideração a distância real das peças de suas posições corretas, oferecendo uma estimativa mais precisa dos custos.
 
-Cada algoritmo foi implementado e testado para avaliar seu desempenho em termos de uso de memória, quantidade de nós expandidos, fator de ramificação médio e tempo de execução. A partir desses resultados, são feitas considerações finais sobre a eficiência e adequação de cada algoritmo para resolver o N-Puzzle.
+Cada algoritmo foi implementado e testado para avaliar seu desempenho em termos de uso de memória, quantidade de nós expandidos, fator de ramificação médio e tempo de execução. A partir desses resultados, são feitas considerações finais sobre a eficiência e adequação de cada algoritmo para resolver o problema do N-Puzzle.
 
 ## Contribuidores:
 
