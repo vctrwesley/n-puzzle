@@ -1,8 +1,8 @@
 from service.ids import relatorio 
 
 def main():
+    initial = [7, 0, 6, 1, 5, 2, 3, 4, 8]
     goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
-    initial = [1, 2, 3, 4, 5, 0, 6, 7, 8]
     path, max_memoria_usada, timeFinal, nos_expandidos, fator_ramificacao = relatorio(initial, goal)
 
     print("--------------------------------------\n")
